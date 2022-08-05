@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar o transporte</title>
+</head>
+
+<body>
+    <div class="header">
+        <h3>ChicoApp</h3>
+    </div>
+    <div class="container">
+        <form class="loginForm" action="/registroVeiculo" method="post">
+            <h1>Registrar o transporte</h1>
+            
+            {% for message in get_flashed_messages() %}
+            <div class="alert-error">Error: {{ message }}</div>
+            {% endfor %}
+            
+            <p>Digite informações</p>
+            <input type="text" name="placa do veiculo" id="placa do veiculo" placeholder="Placa do Veiculo">
+            <input type="text" name="cpf passageiro"  id="cpf passageiro"  placeholder="CPF do passageiro">
+            <input type="date" name="date" id="date" placeholder="Data do transporte">
+            <input type="text" name="quantidade" id="quantidade" placeholder="Quantidade de Km do trajeto">
+            <input type="text" name="valor"  id="valor"  placeholder="Valor cobrado">
+
+            
+            <button type="submit">Registrar</button>
+            <div class="link">
+                <a href="/home">Voltar</a>
+            </div>
+        </form>
+    </div>
+</body>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        background: #202020;
+        color: white;
+    }
+
+    .header {
+        display: flex;
+        padding: 1%;
+        text-align: center;
+        background: #181818;
+    }
+
+    .container {
+        padding: 5%;
+    }
+
+    .loginForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2%;
+    }
+
+    .link {
+        padding: 2%;
+    }
+    .alert-error {
+        padding: 8px;
+        background-color: red;
+        color: white;
+    }
+    input {
+        background-color: transparent;
+        padding: 2%;
+        margin-top: 2%;
+        border: 1px solid white;
+        color: white;
+        width: 96%;
+    }
+
+    button {
+        background-color: white;
+        margin-top: 2%;
+        padding: 2%;
+        margin-top: 2%;
+        border: 1px solid white;
+        color: #202020;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: transparent;
+        color: white;
+    }
+</style>
+
+</html>
